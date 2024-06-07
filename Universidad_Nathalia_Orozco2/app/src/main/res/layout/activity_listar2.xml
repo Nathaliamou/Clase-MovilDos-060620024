@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ListarActivity"
+    style="@style/LinearLayoutStyle">
+
+
+    <TextView
+        android:id="@+id/tvtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="Listado de Estudiantes"
+        style="@style/TextViewTitleStyle"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rvestudiantes"
+        android:layout_width="370dp"
+        android:layout_height="500dp"
+        android:onClick="estudiantes"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        style="@style/RecyclerViewStyle"
+        />
+
+    <Button
+        android:id="@+id/btregresar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:onClick="Regresar"
+        android:text="Regresar"
+        android:textSize="30dp"
+        style="@style/ButtonStyle" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/RecyclerViewItemStyle"
+        android:text="Nombre del Estudiante: Nathalia Orozco"
+        android:textSize="20dp"/>
+</LinearLayout>
+
+

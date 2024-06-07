@@ -1,0 +1,62 @@
+array list
+tiene 5 
+def en cada posicion que va a almacenar. en cada posicion .
+
+
+1.- calse
+23052024
+
+2.-hacer una pagina llamada
+
+3- hacer una clase
+btn derecho sobre  com.example.universidad
+
+public class ClsEstudiantes {
+    private String identificacion;
+
+    private String nombre;
+
+    private String carrera;
+
+    private String semestre;
+
+    private String activo;
+------------------------------------
+
+4- btn derecho generar un constructor vacio
+
+
+----------------
+
+
+
+    public ClsEstudiantes() {
+    }
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+
+
+--------------------
+
+5.- btn derecho generar getter y setter
+seleccionamos los 5 opciones.
+
+ identificacion;nombre; carrera; semestre; activo;
+
+6.- dibujamos , diseño, card view
+------------
+vamos a proyect -->java --> res
+
+layout
+--> btn derecho --> new ---->layout resource  file
+
+nombre: estudiantesresource
+
+seobserva que no crea archivo java.
+su contraparte.
+
+
+

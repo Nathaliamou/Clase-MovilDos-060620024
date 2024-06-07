@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "185180394566",
+    "project_id": "universidad-jueves-nathaliamou",
+    "storage_bucket": "universidad-jueves-nathaliamou.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185180394566:android:4925bbf24d9395d988a647",
+        "android_client_info": {
+          "package_name": "com.example.universidad_jueves"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-bN-28dgvEIcScF8wl0UrONTdlL-2t1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185180394566:android:83a16d013dec05f788a647",
+        "android_client_info": {
+          "package_name": "com.example.universidad_nathalia_orozco"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-bN-28dgvEIcScF8wl0UrONTdlL-2t1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

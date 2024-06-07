@@ -1,0 +1,276 @@
+se agregan los siguientes cambios en el proyecto 
+
+1- la pagina "estudiantesresource.xml"
+
+2.-en formato Java se agrega una clase.
+se llama ClsEstudiantes.java
+
+3.-en formato xml activity_listar2.xml
+
+4.-en formato Java ListarActivity.java
+
+-------------------------------------------------------
+resumen: recordar que los nombres deben ser segun la convencion
+
+ListarActivity.java
+activity_listar.xml
+
+siepre con su pareja excepto la clase.
+
+
+
+-----------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#87CEEB"
+    >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvestudiantes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/etimagen"
+                android:layout_width="100dp"
+                android:layout_height="121dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/ic_launcher"
+
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:id="@+id/etcarnet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Carnet"
+
+                    />
+
+                <TextView
+                    android:id="@+id/etnombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Nombre" />
+
+                <TextView
+                    android:id="@+id/etcarrera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Carrera" />
+
+                <TextView
+                    android:id="@+id/etsemestre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Semestre" />
+
+                <CheckBox
+                    android:id="@+id/cbactivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text=" Activo"
+
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout >
+
+
+-----------------------------------
+2.- La clase.
+se llama ClsEstudiantes.java
+-----------------
+
+package com.example.universidad_nathalia_orozco;
+
+public class ClsEstudiantes {
+    private String identificacion;
+
+    private String nombre;
+
+    private String carrera;
+
+    private String semestre;
+
+    private String activo;
+
+
+    public ClsEstudiantes() {
+    }
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public String getSemestre() {
+        return semestre;
+    }
+
+    public void setSemestre(String semestre) {
+        this.semestre = semestre;
+    }
+
+    public String getActivo() {
+        return activo;
+    }
+
+    public void setActivo(String activo) {
+        this.activo = activo;
+    }
+}
+
+-----------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ListarActivity">
+
+
+    <TextView
+        android:id="@+id/tvtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="Listado de Estudiantes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/rvestudiantes"
+        android:layout_width="370dp"
+        android:layout_height="500dp"
+        android:onClick="estudiantes"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        />
+
+    <Button
+        android:id="@+id/btregresar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:onClick="Regresar"
+        android:text="Regresar"
+        android:textSize="30dp" />
+
+</LinearLayout>
+
+
+
+-----------------
+
+
+4.- ListarActivity.java
+-----------------
+
+package com.example.universidad_nathalia_orozco;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+
+public class ListarActivity extends AppCompatActivity {
+    RecyclerView recyclerestudiante;
+    ArrayList<ClsEstudiantes> listaestudiantes;
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_listar2);
+        //asociar los objetos xml a los obj java.
+        rvestudiantes = findViewById(R.id.rvlistarestudiantes);
+        //listaestudiantes = new ArrayList<>();
+
+        //iniciar arraylist
+        alEstudiantes=new ArrayList<>();
+        // si coloco new estudiante debe aparecer
+        recyclerestudiante.setLayoutManager(new LinearLayoutManager(this.getApplicationContext()));
+        // el siguiente lo vuelve dinamico
+        recyclerestudiante.setHasFixedSize(true);
+        //cargarestudiantes();
+
+
+    } //fin onCreate
+
+    private void Cargar_Estudiantes(){
+        //en que momento?
+
+        db.collection("users")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                              //  Log.d(TAG, document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                           // Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+    }
+}

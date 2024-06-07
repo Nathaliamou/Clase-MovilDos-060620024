@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MenusActivity"
+    android:background="#33CEEB"
+    android:padding="16dp"
+    android:layout_margin="10dp"
+    android:clipToOutline="true">
+
+    <Button
+        android:id="@+id/btuniversidad"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:textSize="30dp"
+        android:onClick="universidad"
+        android:layout_marginTop="270dp"
+        android:layout_gravity="center"
+        android:text="Universidad"/>
+
+    <Button
+        android:id="@+id/btmaterias"
+        android:layout_width="370dp"
+        android:layout_height="60dp"
+        android:textSize="30dp"
+        android:onClick="materias"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="Materias"
+        />
+
+    <TextView
+        android:id="@+id/tvpropietario"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="NATHALIA MARÍA OROZCO URIBE"
+        android:textSize="20dp"
+        android:background="#50CEEB"/>
+    <TextView
+        android:id="@+id/tvsubmodulo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="MATERIA MOVILES II"
+        android:textSize="20dp"
+        android:background="#50CEEB"/>
+    <TextView
+        android:id="@+id/tvprofesor"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="FREDDY MOSCOSO"
+        android:textSize="20dp"
+        android:background="#50CEEB"/>
+
+</LinearLayout>
